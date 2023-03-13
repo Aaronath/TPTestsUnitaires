@@ -15,19 +15,17 @@ class GestionTourneeTest {
     public TypePrestation typePrestation;
     @BeforeEach
     void setUp() {
-        ArrayList<Visite> lesVisites = new ArrayList<>();
         Adherent ad1 = new Adherent("Jean", "Jacques", "02561258", "147", "852");
         typePrestation = new TypePrestation(25, "Planter");
         PrestationVisite presta = new PrestationVisite(typePrestation, 4);
-        ArrayList<PrestationVisite> lesPrestas = new ArrayList<>();
-        lesPrestas.add(presta);
 
-        maVisite = new Visite(ad1, lesPrestas, "14:00");
+        maVisite = new Visite(ad1, "14:00");
+        maVisite.ajouterPrestationVisite(presta);
 
-        lesVisites.add(maVisite);
         Inseminateur ins1 = new Inseminateur("John", "Doe", "5201478963", "jdoe", "doej");
         Date date = new Date();
-        Tournee tournee = new Tournee(date, lesVisites, 14, ins1);
+        Tournee tournee = new Tournee(date,14, ins1);
+        tournee.ajouterVisite(maVisite);
         gestionTournee = new GestionTournee(tournee);
     }
 

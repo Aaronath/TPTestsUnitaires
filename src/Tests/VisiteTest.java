@@ -19,15 +19,19 @@ class VisiteTest {
         Adherent ad1 = new Adherent("Jean", "Jacques", "02561258", "147", "852");
         TypePrestation typePrestation = new TypePrestation(25, "Planter");
         PrestationVisite presta = new PrestationVisite(typePrestation, 4);
-        ArrayList<PrestationVisite> lesPrestas = new ArrayList<>();
-        lesPrestas.add(presta);
 
-        maVisite = new Visite(ad1, lesPrestas, "14:00");
+        Adherent ad2 = new Adherent("Joe", "Joe", "02561258", "147", "852");
+        TypePrestation typePrestation2 = new TypePrestation(20, "Creuser");
+        PrestationVisite presta2 = new PrestationVisite(typePrestation2, 2);
+
+        maVisite = new Visite(ad1, "14:00");
+        maVisite.ajouterPrestationVisite(presta);
+        maVisite.ajouterPrestationVisite(presta2);
     }
 
     @Test
     void montantAFacturer() {
         // Test
-        assertEquals(100, maVisite.montantAFacturer());
+        assertEquals(140, maVisite.montantAFacturer());
     }
 }

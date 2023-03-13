@@ -9,9 +9,9 @@ public class Tournee {
     private int kmRealises;
     private Inseminateur leInseminateur;
 
-    public Tournee(Date date, ArrayList<Visite> lesVisites, int kmRealises, Inseminateur leInseminateur) {
+    public Tournee(Date date, int kmRealises, Inseminateur leInseminateur) {
         this.date = date;
-        this.lesVisites = lesVisites;
+        this.lesVisites = new ArrayList<>();
         this.kmRealises = kmRealises;
         this.leInseminateur = leInseminateur;
     }

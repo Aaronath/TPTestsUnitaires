@@ -7,9 +7,9 @@ public class Visite {
     private ArrayList<PrestationVisite> lesPrestationsVisite;
     private String heure;
 
-    public Visite(Adherent leAdherent, ArrayList<PrestationVisite> lesPrestationsVisite, String heure) {
+    public Visite(Adherent leAdherent, String heure) {
         this.leAdherent = leAdherent;
-        this.lesPrestationsVisite = lesPrestationsVisite;
+        this.lesPrestationsVisite = new ArrayList<>();
         this.heure = heure;
     }
 
